@@ -1,16 +1,27 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";
 import styles from "../styles/Filter.module.css";
 export default function ActiveFilters() {
   const { filters, dispatch } = useContext(FilterContext);
   return (
-    <>
+    <AnimatePresence>
       {filters.length > 0 && (
-        <div className={styles.activeFilters}>
+        <motion.div
+          initial={{ scale: 0, y: "50%" }}
+          animate={{ scale: 1, y: "-50%" }}
+          exit={{ scale: 0, y: "-50%" }}
+          className={styles.activeFilters}
+        >
           <ul className={styles.filters}>
             {filters.map((filter) => {
               return (
-                <li key={filter} className={styles.filter}>
+                <motion.li
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  key={filter}
+                  className={styles.filter}
+                >
                   {filter}
                   <button
                     onClick={() => {
@@ -20,7 +31,7 @@ export default function ActiveFilters() {
                   >
                     <img src="./images/icon-remove.svg" alt="" />
                   </button>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
@@ -32,8 +43,8 @@ export default function ActiveFilters() {
           >
             Clear
           </button>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   );
 }

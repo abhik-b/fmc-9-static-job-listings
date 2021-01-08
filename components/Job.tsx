@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";
 import styles from "../styles/Jobs.module.css";
@@ -28,9 +29,15 @@ export const Job: React.FC<Jobprops> = ({ job }) => {
   const found = filters.every((r) => tags.includes(r));
 
   return (
-    <>
+    <AnimatePresence>
       {filters.length > 0 && found === false ? null : (
-        <li className={styles.job}>
+        <motion.li
+          layoutId={job.company}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={styles.job}
+        >
           <div className={styles.companyLogo}>
             <img src={`${job.logo}`} alt={job.company} />
           </div>
@@ -50,8 +57,8 @@ export const Job: React.FC<Jobprops> = ({ job }) => {
           </div>
 
           <Tags tags={tags} />
-        </li>
+        </motion.li>
       )}
-    </>
+    </AnimatePresence>
   );
 };

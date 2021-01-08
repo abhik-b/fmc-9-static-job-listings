@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Jobs from "../components/Jobs";
 import FilterContextProvider from "../contexts/FilterContext";
 import styles from "../styles/Home.module.css";
-
+import { AnimateSharedLayout } from "framer-motion";
 export default function Home() {
   return (
     <>
@@ -14,8 +14,10 @@ export default function Home() {
       </Head>
       <Header />
       <FilterContextProvider>
-        <ActiveFilters />
-        <Jobs />
+        <AnimateSharedLayout>
+          <ActiveFilters />
+          <Jobs />
+        </AnimateSharedLayout>
       </FilterContextProvider>
       <footer className={styles.footer}>
         <a
@@ -27,7 +29,7 @@ export default function Home() {
           <div className={styles.logo}>
             <img
               src="https://avatars0.githubusercontent.com/u/40115867?s=460&u=818c7d4a1529080a0e5659aff0ff3ecbe47aa889&v=4"
-              alt="abhik b"
+              alt=""
             />
           </div>
         </a>

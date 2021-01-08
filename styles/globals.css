@@ -21,7 +21,7 @@ ul {
 }
 body {
   min-height: 100vh;
- background: hsl(180, 52%, 96%)
+  background: hsl(180, 52%, 96%);
 }
 
 button {
@@ -37,4 +37,9 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+@media screen and (min-width: 600px) {
+  .bg-header {
+    background-image: url("/images/bg-header-desktop.svg");
+  }
 }

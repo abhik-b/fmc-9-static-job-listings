@@ -3,15 +3,18 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding: 3em 1em;
+  margin-top: -2em;
 }
 .job {
+  align-self: center;
   background: white;
   position: relative;
   margin: 2em 0;
-  min-height: 10em;
   border-radius: 8px;
   padding: 0.2em 1.2em;
   box-shadow: 6px 6px 2em rgba(0, 0, 0, 0.3);
+  width: 95vw;
+  min-width: 18em;
 }
 .job::before {
   position: absolute;
@@ -96,4 +99,57 @@
   top: 50%;
   left: -2%;
   transform: translateY(-25%);
+}
+
+@media screen and (min-width: 600px) {
+  .job {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .job {
+    display: grid;
+    grid-template-columns: 10% auto 40%;
+    grid-template-rows: 30% 20% 20%;
+    grid-template-areas: "logo company  tags" "logo position  tags" "logo features  tags";
+    padding: 1em;
+    padding-right: 0;
+    column-gap: 15px;
+    row-gap: 10px;
+
+    align-items: center;
+  }
+  .company {
+    grid-area: company;
+    margin-top: 0;
+  }
+  .features {
+    margin-top: 0;
+    border: none;
+    padding-bottom: 0;
+    height: fit-content;
+    grid-area: features;
+  }
+  .position {
+    margin-top: 0;
+    height: fit-content;
+    grid-area: position;
+  }
+  .companyLogo {
+    position: static;
+    transform: none;
+    width: 4.5em;
+    height: 4.5em;
+    align-self: center;
+    justify-self: center;
+    grid-area: logo;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .job {
+    grid-template-columns: 10% auto 45%;
+    width: 80vw;
+    max-width: 55em;
+  }
 }

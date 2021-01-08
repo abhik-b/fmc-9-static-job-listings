@@ -1,11 +1,3 @@
-import { type } from "os";
-
-export const ActionTypes = {
-  ADD_FILTER: "ADD_FILTER",
-  REMOVE_FILTER: "REMOVE_FILTER",
-  UPDATE_FILTER: "UPDATE_FILTER",
-};
-
 export type ACTIONS =
   | { type: "ADD_FILTER"; payload: { filter: string } }
   | { type: "REMOVE_FILTER"; payload: { filter: string } }
