@@ -29,7 +29,7 @@ export default function ActiveFilters() {
                     }}
                     className={styles.rmF}
                   >
-                    <img src="./images/icon-remove.svg" alt="" />
+                    <img src="./images/icon-remove.svg" alt="remove filter" />
                   </button>
                 </motion.li>
               );

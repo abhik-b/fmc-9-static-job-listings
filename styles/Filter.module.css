@@ -14,6 +14,8 @@
   margin: 5px;
   cursor: pointer;
   transition: 0.5s;
+  display: grid;
+  place-items: center;
 }
 .filter:hover {
   color: hsl(180, 31%, 95%);
@@ -77,10 +79,23 @@
   background: hsl(180, 31%, 95%);
   color: hsl(180, 29%, 50%);
 }
+
+@media screen and (min-width: 600px) {
+  .activeFilters {
+    width: 90vw;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .filter {
     max-height: 2.5em;
   }
+  .activeFilters {
+    width: 90vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .activeFilters {
     width: 80vw;
     max-width: 55em;

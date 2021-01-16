@@ -25,13 +25,13 @@
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   background: hsl(180, 29%, 50%);
-  transform: scaleY(0);
+  transform: scaleX(0);
   height: 100%;
-  transition: 0.5s linear;
-  transform-origin: bottom;
+  transition: 0.3s cubic-bezier(0.61, 0.01, 0.69, 0.95);
+  transform-origin: left;
 }
 .job:hover::before {
-  transform: scaleY(1);
+  transform: scaleX(1);
 }
 .companyLogo {
   position: absolute;
@@ -58,11 +58,12 @@
 }
 .company span:first-child {
   color: hsl(180, 29%, 50%);
-  font-weight: bold;
+  font-weight: 700;
 }
 .company span:not(:first-child) {
   color: white;
-  padding: 5px 10px;
+  padding: 7px 10px 3px;
+
   border-radius: 999px;
 }
 
@@ -74,6 +75,7 @@
 }
 .position {
   margin-top: 0.5em;
+  font-size: 1.5ch;
 }
 .features {
   margin-top: 1em;
@@ -98,26 +100,32 @@
   position: absolute;
   top: 50%;
   left: -2%;
-  transform: translateY(-25%);
+  transform: translateY(-60%);
 }
 
+@media screen and (max-width: 340px) {
+  .company span:not(:last-child) {
+    margin-right: 0.5em;
+  }
+}
 @media screen and (min-width: 600px) {
   .job {
-    width: 90vw;
+    width: 80vw;
   }
 }
 @media screen and (min-width: 768px) {
   .job {
     display: grid;
-    grid-template-columns: 10% auto 40%;
+    grid-template-columns: 10% auto 35%;
     grid-template-rows: 30% 20% 20%;
     grid-template-areas: "logo company  tags" "logo position  tags" "logo features  tags";
     padding: 1em;
     padding-right: 0;
     column-gap: 15px;
     row-gap: 10px;
-
+    z-index: 9999;
     align-items: center;
+    width: 95vw;
   }
   .company {
     grid-area: company;
@@ -148,8 +156,10 @@
 
 @media screen and (min-width: 1024px) {
   .job {
-    grid-template-columns: 10% auto 45%;
+    grid-template-columns: 10% 40% auto;
     width: 80vw;
-    max-width: 55em;
+    max-width: 58em;
+    column-gap: 5px;
+    height: 8em;
   }
 }

@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <html lang="en" />
         <title>Static Job Listings | FM Challenge </title>
         <link rel="icon" href="./favicon.ico" />
       </Head>
@@ -29,7 +30,7 @@ export default function Home() {
           <div className={styles.logo}>
             <img
               src="https://avatars0.githubusercontent.com/u/40115867?s=460&u=818c7d4a1529080a0e5659aff0ff3ecbe47aa889&v=4"
-              alt=""
+              alt="abhik B"
             />
           </div>
         </a>
