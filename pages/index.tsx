@@ -1,18 +1,13 @@
-import Head from "next/head";
 import ActiveFilters from "../components/ActiveFilters";
 import Header from "../components/Header";
 import Jobs from "../components/Jobs";
 import FilterContextProvider from "../contexts/FilterContext";
 import styles from "../styles/Home.module.css";
 import { AnimateSharedLayout } from "framer-motion";
+
 export default function Home() {
   return (
     <>
-      <Head>
-        <html lang="en" />
-        <title>Static Job Listings | FM Challenge </title>
-        <link rel="icon" href="./favicon.ico" />
-      </Head>
       <Header />
       <FilterContextProvider>
         <AnimateSharedLayout>
@@ -23,7 +18,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <a
           target="_blank"
-          rel="noopener onreferrer"
+          rel="noopener noreferrer"
           href="https://www.youtube.com/channel/UC74BFCI_FbThOjUqx6gmccg"
         >
           Coded by
